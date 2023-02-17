@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
+  background-color: transparent;
 }
 .mainpage {
   min-height: 100vh;

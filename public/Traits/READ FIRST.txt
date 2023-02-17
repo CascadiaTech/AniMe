@@ -1,0 +1,6 @@
+NFT important notes:
+
+1. Regarding the Backgrounds, there should be 2500 for each background colour (Blue, Green, Orange, Red).
+2. There are 5 different ape colour skins; these are allowed to be done randomized (there is no minimum nor maximum of the skin colour use).
+3. An important detail: As the main template already has an ape with brown skin, you can find in the folder of 'ape skins' an uncompleted skin named 'brown skin' which is done on purpose (Must also still be used).
+4. Regarding Rarity of the NFTs, in the folder named 'tank' you can find first four images marked as 'rare'. (You are free to decide if there should be more rare images from other folders, but it is not neccessary)
