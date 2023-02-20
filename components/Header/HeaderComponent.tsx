@@ -1,8 +1,9 @@
 import "tailwindcss-elevation";
-
+import Image from "next/image";
 import React from "react";
 //import Image from "next/image";
 import Link from "next/link";
+import AniMeLogo from "../../assets/images/AniMe-logo.jpg";
 import { ConnectWallet } from "../Web3Modal/WalletConnect";
 import { Dropdown } from "flowbite-react";
 export default function HeaderComponent() {
@@ -22,7 +23,7 @@ export default function HeaderComponent() {
                 <span className="block text-sm">Navigation</span>
               </Dropdown.Header>
               <Dropdown.Item>
-               <Link href="/">
+                <Link href="/">
                   <p
                     className="cursor-pointer block py-2 pr-4 pl-3 text-black rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
                     style={{ fontFamily: "MondayFeelings" }}
@@ -42,10 +43,11 @@ export default function HeaderComponent() {
                 </Link>
               </Dropdown.Item>
               <Dropdown.Item>
-                <a 
+                <a
                   onClick={() =>
                     window.open("https://www.givewellinu.com/home")
-                  }>
+                  }
+                >
                   <p
                     className="cursor-pointer block py-2 pr-4 pl-3 text-black rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
                     style={{ fontFamily: "MondayFeelings" }}
@@ -63,6 +65,9 @@ export default function HeaderComponent() {
           >
             <ul className="invisible md:visible h-auto flex flex-row justify-left text-left items-left p-4 mt-4 bg-black rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-black dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
+                <Image width={60} height={60} src={AniMeLogo} alt="asa"></Image>
+              </li>
+              <li>
                 <button
                   type="button"
                   onClick={() =>
@@ -79,33 +84,33 @@ export default function HeaderComponent() {
                 </button>
               </li>
               <li>
-              <Link href="/">
-                <button
-                  type="button"
-                  className="text-white bg-teal-400 hover:bg-purple-800 focus:ring-4 focus:ring-blue-300 font-medium mt-2 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                >
-                  <p
-                    className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white"
-                    style={{ fontFamily: "MondayFeelings" }}
+                <Link href="/">
+                  <button
+                    type="button"
+                    className="text-white bg-teal-400 hover:bg-purple-800 focus:ring-4 focus:ring-blue-300 font-medium mt-2 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                   >
-                    Dashboard{" "}
-                  </p>
-                </button>
+                    <p
+                      className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white"
+                      style={{ fontFamily: "MondayFeelings" }}
+                    >
+                      Dashboard{" "}
+                    </p>
+                  </button>
                 </Link>
               </li>
               <li>
-              <Link href="/Dapp/NFTMintPage">
-                <button
-                  type="button"
-                  className="text-white bg-teal-400 hover:bg-purple-800 focus:ring-4 focus:ring-blue-300 font-medium mt-2 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                >
-                  <p
-                    className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white"
-                    style={{ fontFamily: "MondayFeelings" }}
+                <Link href="/Dapp/NFTMintPage">
+                  <button
+                    type="button"
+                    className="text-white bg-teal-400 hover:bg-purple-800 focus:ring-4 focus:ring-blue-300 font-medium mt-2 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                   >
-                    NFT Mint{" "}
-                  </p>
-                </button>
+                    <p
+                      className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white"
+                      style={{ fontFamily: "MondayFeelings" }}
+                    >
+                      NFT Mint{" "}
+                    </p>
+                  </button>
                 </Link>
               </li>
             </ul>
