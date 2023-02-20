@@ -294,7 +294,7 @@ const Home: NextPage = () => {
           >
             <button
               style={{ fontFamily: "MondayFeelings" }}
-              className="px-4 m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
+              className="px-2 m-1 md:px-4 md:m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
          hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
               onClick={() => setimage("BACKGROUND")}
             >
@@ -303,7 +303,7 @@ const Home: NextPage = () => {
             </button>
             <button
               style={{ fontFamily: "MondayFeelings" }}
-              className="px-4 m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
+              className="px-2 m-1 md:px-4 md:m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
          hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
               onClick={() => setimage("CLOTHES")}
             >
@@ -312,7 +312,7 @@ const Home: NextPage = () => {
             </button>
             <button
               style={{ fontFamily: "MondayFeelings" }}
-              className="px-4 m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
+              className="px-2 m-1 md:px-4 md:m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
          hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
               onClick={() => setimage("TEMPLATE")}
             >
@@ -320,7 +320,7 @@ const Home: NextPage = () => {
             </button>
             <button
               style={{ fontFamily: "MondayFeelings" }}
-              className="px-4 m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
+              className="px-2 m-1 md:px-4 md:m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
          hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
               onClick={() => setimage("FACEITEM")}
             >
@@ -339,7 +339,7 @@ const Home: NextPage = () => {
           >
             <button
               style={{ fontFamily: "MondayFeelings" }}
-              className="px-4 m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
+              className="px-2 m-1 md:px-4 md:m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
          hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
               onClick={() => setimage("EYES")}
             >
@@ -347,7 +347,7 @@ const Home: NextPage = () => {
             </button>
             <button
               style={{ fontFamily: "MondayFeelings" }}
-              className="px-4 m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
+              className="px-2 m-1 md:px-4 md:m-2 py-2  sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
          hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
               onClick={() => setimage("HELMET")}
             >
@@ -355,7 +355,7 @@ const Home: NextPage = () => {
             </button>
             <button
               style={{ fontFamily: "MondayFeelings" }}
-              className="px-4 m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
+              className="px-2 m-1 md:px-4 md:m-2 py-2  sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
          hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
               onClick={() => setimage("HAIR")}
             >
@@ -363,7 +363,7 @@ const Home: NextPage = () => {
             </button>
             <button
               style={{ fontFamily: "MondayFeelings" }}
-              className="px-4 m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
+              className="px-2 m-1 md:px-4 md:m-2 py-2  sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
          hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
               onClick={() => setimage("HANDITEM")}
             >
@@ -371,7 +371,7 @@ const Home: NextPage = () => {
             </button>
             <button
               style={{ fontFamily: "MondayFeelings" }}
-              className="px-4 m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
+              className="px-2 m-1 md:px-4 md:m-2 py-2  sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
          hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
               onClick={() => setimage("MOUTH")}
             >
