@@ -48,6 +48,7 @@
     "dotenv": "^16.0.3",
     "flowbite": "^1.5.3",
     "flowbite-react": "^0.2.0",
+    "fs": "^0.0.1-security",
     "fs-extra": "^11.1.0",
     "image-data-uri": "^2.0.1",
     "merge-images": "^2.0.0",

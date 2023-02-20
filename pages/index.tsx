@@ -26,6 +26,7 @@ import { mouthImages } from "../components/ImageArrays/ImageArraysComponent";
 import mergeImages from "merge-images";
 import { Image, Canvas } from "canvas";
 import ImageDataURI from "image-data-uri";
+import { useImageUpload } from "../components/ImageUploader/imageupload";
 
 const Home: NextPage = () => {
   const { account, chainId, active } = useWeb3React();
@@ -555,6 +556,7 @@ const Home: NextPage = () => {
             <button
               style={{ fontFamily: "BeatWord" }}
               type="button"
+              onClick={() => useImageUpload(currentbackgroundImage, currentTemplateImage, currentclothesImage,currentmouthImage, currentfaceItemImage, currenteyesImage, currenthairImage, currenthandItemImage,currenthelmetImage)}
               className="w-fit mx-0 px-20 md:px-32 self-center content-center tn:mx-0 elevation-10 hover:elevation-50 md:mx-24 h-24
                  clip-path-mycorners justify-self-center mt-10 text-gray-100 bg-teal-500 hover:bg-blue-900 transition ease-in-out duration-700
                  text-3xl lg:text-4xl "
@@ -570,3 +572,4 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+//  onClick={() => useImageUpload(currentbackgroundImage, currentTemplateImage, currentclothesImage,currentmouthImage, currentfaceItemImage, currenteyesImage, currenthairImage, currenthandItemImage,currenthelmetImage)}
