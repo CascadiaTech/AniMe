@@ -255,7 +255,7 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div style={{background: 'linear-gradient(to bottom, #FF3B3B 0%, #FF2E2E 46%, #FF2E2E 100%)'}}>
+    <div style={{background: 'linear-gradient(to bottom, #FF2E41 0%, #FF2E41 46%, #FF2E41 100%)'}}>
       <main className={styles.main}>
         <header>
           {" "}
@@ -579,12 +579,11 @@ const Home: NextPage = () => {
             <button
               style={{ fontFamily: "BeatWord", boxShadow: '0px 0px 10px 5px rgba(255,0,0,0.7)' }}
               type="button"
-              onClick={() => useImageUpload(currentbackgroundImage, currentTemplateImage, currentclothesImage,currentmouthImage, currentfaceItemImage, currenteyesImage, currenthairImage, currenthandItemImage,currenthelmetImage)}
-              className="w-fit mx-0 px-20 md:px-32 self-center content-center tn:mx-0 elevation-10 hover:elevation-50 md:mx-24 h-24
+              className="w-fit border-2 border-gray-400 mx-0 px-20 md:px-32 self-center content-center tn:mx-0 elevation-10 hover:elevation-50 md:mx-24 h-24
                  justify-self-center mt-10 rounded-xl text-gray-100 hover:bg-blue-900 transition ease-in-out duration-700
                  text-3xl lg:text-4xl "
             >
-              Start Mintin'
+              Mint
             </button>
           </div>
         </div>
