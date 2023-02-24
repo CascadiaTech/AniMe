@@ -14,7 +14,7 @@ import MintCardComponent from "../components/Cards/MintCard";
 import { Dropdown } from "flowbite-react";
 import DropdownComponent from "../components/Dropdown/DropdownComponent";
 import React from "react";
-import AniMelogo from "../assets/images/AniMe-logo.jpg"
+import AniMelogo from "../assets/images/AniMe-logo.jpg";
 import { backgroundImages } from "../components/ImageArrays/ImageArraysComponent";
 import { templateImage } from "../components/ImageArrays/ImageArraysComponent";
 import { clothesImages } from "../components/ImageArrays/ImageArraysComponent";
@@ -47,6 +47,120 @@ const Home: NextPage = () => {
   const [currenteyesImage, setCurrenteyesImage] = useState("");
   const [currenthairImage, setCurrenthairImage] = useState("");
   const [image, setimage] = useState(String);
+
+  const [backgroundButton, setBackgroundButton] = useState(
+    "/Buttons/BackgroundButtonGrey.png"
+  );
+  const [clothesButton, setClothesButton] = useState(
+    "/Buttons/ClothesButtonGrey.png"
+  );
+  const [templateButton, setTemplateButton] = useState(
+    "/Buttons/TemplateButtonGrey.png"
+  );
+  const [faceItemsButton, setfaceItemsButton] = useState(
+    "/Buttons/FaceItemsButtonGrey.png"
+  );
+  const [eyesButton, seteyesButton] = useState(
+    "/Buttons/EyesButtonRed.png"
+  );
+  const [helmetButton, sethelmetButton] = useState(
+    "/Buttons/HelmetButtonRed.png"
+  );
+  const [hairButton, sethairButton] = useState(
+    "/Buttons/HairButtonRed.png"
+  );
+  const [handItemsButton, sethandItemsButton] = useState(
+    "/Buttons/HandItemsButtonRed.png"
+  );
+  const [mouthButton, setmouthButton] = useState(
+    "/Buttons/mouthButtonRed.png"
+  );
+
+
+  const handleMouseEnterbgRed = () => {
+    setBackgroundButton("/Buttons/BackgroundButtonRed.png");
+  };
+  const handleMouseLeavebgGrey = () => {
+    setBackgroundButton("/Buttons/BackgroundButtonGrey.png");
+  };
+
+  const handleMouseEnterbtnRed = () => {
+    setClothesButton("/Buttons/ClothesButtonRed.png");
+  };
+  const handleMouseLeavebtnGrey = () => {
+    setClothesButton("/Buttons/ClothesButtonGrey.png");
+  };
+
+  const handleMouseEnterTempRed = () => {
+    setTemplateButton("/Buttons/TemplateButtonRed.png");
+  };
+  const handleMouseLeaveTempGrey = () => {
+    setTemplateButton("/Buttons/TemplateButtonGrey.png");
+  };
+
+  const handleMouseEnterFcItmRed= () => {
+    setfaceItemsButton("/Buttons/FaceItemsButtonRed.png");
+  };
+  const handleMouseLeaveFcItmGrey = () => {
+    setfaceItemsButton("/Buttons/FaceItemsButtonGrey.png");
+  };
+
+  const handleMouseEnterEyesGrey= () => {
+    seteyesButton("/Buttons/EyesButtonGrey.png");
+  };
+  const handleMouseLeaveEyesRed = () => {
+    seteyesButton("/Buttons/EyesButtonRed.png");
+  };
+
+  const handleMouseEnterHlmGrey= () => {
+    sethelmetButton("/Buttons/HelmetButtonGrey.png");
+  };
+  const handleMouseLeaveHlmRed = () => {
+    sethelmetButton("/Buttons/HelmetButtonRed.png");
+  };
+
+  const handleMouseEnterHairGrey= () => {
+    sethairButton("/Buttons/HairButtonGrey.png");
+  };
+  const handleMouseLeaveHairRed = () => {
+    sethairButton("/Buttons/HairButtonRed.png");
+  };
+
+  const handleMouseEnterHndItmGrey= () => {
+    sethandItemsButton("/Buttons/HandItemsButtonGrey.png");
+  };
+  const handleMouseLeaveHndItmRed = () => {
+    sethandItemsButton("/Buttons/HandItemsButtonRed.png");
+  };
+
+  const handleMouseEnterMouthGrey= () => {
+    setmouthButton("/Buttons/MouthButtonGrey.png");
+  };
+  const handleMouseLeaveMouthRed = () => {
+    setmouthButton("/Buttons/MouthButtonRed.png");
+  };
+
+  const handleTouchMove = (e:any) => {
+    const touch = e.touches[0];
+    const buttonRect = e.target.getBoundingClientRect();
+    const isInsideButton =
+      touch.clientX >= buttonRect.left &&
+      touch.clientX <= buttonRect.right &&
+      touch.clientY >= buttonRect.top &&
+      touch.clientY <= buttonRect.bottom;
+  
+    if (isInsideButton) {
+      setBackgroundButton("/Buttons/BackgroundButtonRed.png");
+    } else {
+      setBackgroundButton("/Buttons/BackgroundButtonGrey.png");
+    }
+  };
+
+
+  const handleTouchEnd = () => {
+    setBackgroundButton("/Buttons/BackgroundButtonGrey.png");
+    setimage("BACKGROUND");
+  };
 
   function renderImages() {
     return (
@@ -254,7 +368,12 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div style={{background: 'linear-gradient(to bottom, #FF3B3B 0%, #FF2E2E 46%, #FF2E2E 100%)'}}>
+    <div
+      style={{
+        background:
+          "linear-gradient(to bottom, #FF3B3B 0%, #FF2E2E 46%, #FF2E2E 100%)",
+      }}
+    >
       <main className={styles.main}>
         <header>
           {" "}
@@ -268,17 +387,21 @@ const Home: NextPage = () => {
               textShadow: "0px 0px 18px rgba(227,0,0,0.75)",
             }}
             className={
-              "text-3xl lg:text-5xl text-red-100 text-center w-fit self-center mx-auto"
+              "text-3xl lg:text-5xl text-red-100 text-center w-fit px-10 self-center mx-auto"
             }
           >
-            
-          <Image className={'justify-center mx-auto self-center'} width={450} height={450} src={AniMelogo}></Image>
+            <Image
+              className={"justify-center mx-auto self-center"}
+              width={425}
+              height={425}
+              src={AniMelogo}
+            ></Image>
           </p>
 
           <p
             style={{ fontFamily: "MondayFeelings" }}
             className={
-              "text-xl lg:text-2xl text-teal-100 text-center pt-6 pb-4 px-8 self-center mx-auto border-b-4 border-red-700"
+              "text-xl lg:text-2xl text-teal-100 text-center pt-6 pb-4 px-10 self-center mx-auto border-b-4 border-red-700"
             }
           >
             Create your own NFT character in any way you like!
@@ -289,105 +412,125 @@ const Home: NextPage = () => {
                 "inset 0px 0px 15px 5px rgba(255,69,69,0.65), 0px 0px 12px 3px rgba(255,41,41,0.65)",
             }}
             className={
-              "flex flex-row w-fit justify-center mx-auto border-2 border-gray-300 rounded-xl my-6 justify-center px-2 sm:px-2 md:px-10"
+              "flex flex-row w-fit justify-center mx-auto border-2 border-gray-300 rounded-2xl my-6 justify-center"
             }
           >
-            <button
-              style={{ fontFamily: "MondayFeelings" }}
-              className="px-2 m-1 md:px-4 md:m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
-         hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
-              onClick={() => setimage("BACKGROUND")}
-            >
-              {" "}
-              Backgrounds
-            </button>
-            <button
-              style={{ fontFamily: "MondayFeelings" }}
-              className="px-2 m-1 md:px-4 md:m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
-         hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
+          <Image
+            className="duration-300 hover:cursor-pointer"
+            width={150}
+            height={50}
+            src={backgroundButton}
+            onMouseEnter={() => setBackgroundButton("/Buttons/BackgroundButtonRed.png")}
+            onMouseLeave={() => setBackgroundButton("/Buttons/BackgroundButtonGrey.png")}
+            onTouchStart={handleMouseEnterbgRed}
+            onTouchMove={handleTouchMove}
+            onClick={() => setimage("BACKGROUND")}
+            onTouchEnd={handleTouchEnd}
+          />
+            <p className={"px-2"}></p>
+            <Image
+              className="duration-300 hover:cursor-pointer"
+              width={150}
+              height={50}
+              src={clothesButton}
+              onTouchStart={handleMouseEnterbtnRed}
+              onTouchEnd={handleMouseLeavebtnGrey}
               onClick={() => setimage("CLOTHES")}
-            >
-              {" "}
-              Clothes
-            </button>
-            <button
-              style={{ fontFamily: "MondayFeelings" }}
-              className="px-2 m-1 md:px-4 md:m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
-         hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
+            />
+            <p className={"px-2"}></p>
+            <Image
+              className="duration-300 hover:cursor-pointer"
+              width={150}
+              height={50}
+              src={templateButton}
+              onMouseEnter={handleMouseEnterTempRed}
+              onMouseLeave={handleMouseLeaveTempGrey}
               onClick={() => setimage("TEMPLATE")}
-            >
-              Template
-            </button>
-            <button
-              style={{ fontFamily: "MondayFeelings" }}
-              className="px-2 m-1 md:px-4 md:m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
-         hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
+            />
+            <p className={"px-2"}></p>
+            <Image
+              className="duration-300 hover:cursor-pointer"
+              width={150}
+              height={50}
+              src={faceItemsButton}
+              onMouseEnter={handleMouseEnterFcItmRed}
+              onMouseLeave={handleMouseLeaveFcItmGrey}
               onClick={() => setimage("FACEITEM")}
-            >
-              Face Items
-            </button>
+            />
           </div>
-            
+
           <div
             style={{
               boxShadow:
                 "inset 0px 0px 15px 5px rgba(255,69,69,0.65), 0px 0px 12px 3px rgba(255,41,41,0.65)",
             }}
             className={
-              "flex flex-row w-fit justify-center mx-auto border-2 border-gray-300 rounded-xl my-6 justify-center px-2 sm:px-2 md:px-10"
+              "flex flex-row w-fit justify-center mx-auto border-2 border-gray-300 rounded-2xl my-6 justify-center"
             }
           >
-            <button
-              style={{ fontFamily: "MondayFeelings" }}
-              className="px-2 m-1 md:px-4 md:m-2 py-2 sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
-         hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
-              onClick={() => setimage("EYES")}
-            >
-              Eyes
-            </button>
-            <button
-              style={{ fontFamily: "MondayFeelings" }}
-              className="px-2 m-1 md:px-4 md:m-2 py-2  sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
-         hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
-              onClick={() => setimage("HELMET")}
-            >
-              Helmet
-            </button>
-            <button
-              style={{ fontFamily: "MondayFeelings" }}
-              className="px-2 m-1 md:px-4 md:m-2 py-2  sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
-         hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
-              onClick={() => setimage("HAIR")}
-            >
-              Hair
-            </button>
-            <button
-              style={{ fontFamily: "MondayFeelings" }}
-              className="px-2 m-1 md:px-4 md:m-2 py-2  sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
-         hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
-              onClick={() => setimage("HANDITEM")}
-            >
-              Hand Items
-            </button>
-            <button
-              style={{ fontFamily: "MondayFeelings" }}
-              className="px-2 m-1 md:px-4 md:m-2 py-2  sm:text-lg md:text-xl cursor-pointer border-2 border-gray-400 rounded-xl duration-300
-         hover:bg-gray-400 hover:border-gray-100 hover:text-gray-900"
-              onClick={() => setimage("MOUTH")}
-            >
-              Mouth
-            </button>
+          <Image
+            className="duration-300 hover:cursor-pointer"
+            width={150}
+            height={50}
+            src={eyesButton}
+            onMouseEnter={handleMouseEnterEyesGrey}
+            onMouseLeave={handleMouseLeaveEyesRed}
+            onClick={() => setimage("EYES")}
+          />
+          <p className={"px-2"}></p>
+          <Image
+            className="duration-300 hover:cursor-pointer"
+            width={150}
+            height={50}
+            src={helmetButton}
+            onMouseEnter={handleMouseEnterHlmGrey}
+            onMouseLeave={handleMouseLeaveHlmRed}
+            onClick={() => setimage("HELMET")}
+          />
+          <p className={"px-2"}></p>
+          <Image
+            className="duration-300 hover:cursor-pointer"
+            width={150}
+            height={50}
+            src={hairButton}
+            onMouseEnter={handleMouseEnterHairGrey}
+            onMouseLeave={handleMouseLeaveHairRed}
+            onClick={() => setimage("HAIR")}
+          />
+          <p className={"px-2"}></p>
+          <Image
+            className="duration-300 hover:cursor-pointer"
+            width={150}
+            height={50}
+            src={handItemsButton}
+            onMouseEnter={handleMouseEnterHndItmGrey}
+            onMouseLeave={handleMouseLeaveHndItmRed}
+            onClick={() => setimage("HANDITEM")}
+          />
+          <p className={"px-2"}></p>
+          <Image
+            className="duration-300 hover:cursor-pointer"
+            width={150}
+            height={50}
+            src={mouthButton}
+            onMouseEnter={handleMouseEnterMouthGrey}
+            onMouseLeave={handleMouseLeaveMouthRed}
+            onClick={() => setimage("MOUTH")}
+          />
           </div>
 
-          
           <div className={""}>
-            <div className={"mx-auto justify-center flex flex-col md:flex-col lg:flex-col xl:flex-row overflow-hidden"}>
+            <div
+              className={
+                "w-fit px-10 self-center mx-auto flex flex-col md:flex-col lg:flex-col xl:flex-row overflow-hidden"
+              }
+            >
               <div>
                 {currentbackgroundImage && (
                   <img
                     className={"z-0 absolute"}
-                    width={500}
-                    height={500}
+                    width={425}
+                    height={425}
                     src={currentbackgroundImage}
                     alt="Selected background"
                   />
@@ -397,8 +540,8 @@ const Home: NextPage = () => {
                 {currentTemplateImage && (
                   <img
                     className={"z-10 absolute"}
-                    width={500}
-                    height={500}
+                    width={425}
+                    height={425}
                     src={currentTemplateImage}
                     alt="Selected background"
                   />
@@ -408,8 +551,8 @@ const Home: NextPage = () => {
                 {currentclothesImage && (
                   <img
                     className={"z-20 absolute"}
-                    width={500}
-                    height={500}
+                    width={425}
+                    height={425}
                     src={currentclothesImage}
                     alt="Selected background"
                   />
@@ -419,8 +562,8 @@ const Home: NextPage = () => {
                 {currentfaceItemImage && (
                   <img
                     className={"z-30 absolute"}
-                    width={500}
-                    height={500}
+                    width={425}
+                    height={425}
                     src={currentfaceItemImage}
                     alt="Selected background"
                   />
@@ -430,8 +573,8 @@ const Home: NextPage = () => {
                 {currenteyesImage && (
                   <img
                     className={"z-40 absolute"}
-                    width={500}
-                    height={500}
+                    width={425}
+                    height={425}
                     src={currenteyesImage}
                     alt="Selected background"
                   />
@@ -441,8 +584,8 @@ const Home: NextPage = () => {
                 {currenthelmetImage && (
                   <img
                     className={"z-50 absolute"}
-                    width={500}
-                    height={500}
+                    width={425}
+                    height={425}
                     src={currenthelmetImage}
                     alt="Selected background"
                   />
@@ -452,8 +595,8 @@ const Home: NextPage = () => {
                 {currenthairImage && (
                   <img
                     className={"z-30 absolute"}
-                    width={500}
-                    height={500}
+                    width={425}
+                    height={425}
                     src={currenthairImage}
                     alt="Selected background"
                   />
@@ -463,8 +606,8 @@ const Home: NextPage = () => {
                 {currenthandItemImage && (
                   <img
                     className={"z-70 absolute"}
-                    width={500}
-                    height={500}
+                    width={425}
+                    height={425}
                     src={currenthandItemImage}
                     alt="Selected background"
                   />
@@ -474,96 +617,130 @@ const Home: NextPage = () => {
                 {currentmouthImage && (
                   <img
                     className={"z-50 absolute"}
-                    width={500}
-                    height={500}
+                    width={425}
+                    height={425}
                     src={currentmouthImage}
                     alt="Selected background"
                   />
                 )}
               </div>
-                  
-                  <p className={'mx-0 sm:mx-0 md:mx-0 lg:mx-0 xl:mx-80'}></p>
-              <p className={'my-72 md:my-72 lg:my-72 xl:my-0'}></p>
 
-              <div className={"mx-auto justify-center text-center mr-60"}>
+              <p className={"mx-0 sm:mx-0 md:mx-0 lg:mx-0 xl:mx-80"}></p>
+              <p className={"my-72 md:my-72 lg:my-72 xl:my-0"}></p>
+
+              <div className={"mx-auto justify-center text-center mr-40"}>
                 <div
                   style={{
-                    zIndex: image == "BACKGROUND" ? 20 : 0, height: 500, width: 500,
-                  }} 
-                   className={
-                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-2 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
+                    zIndex: image == "BACKGROUND" ? 20 : 0,
+                    height: 425,
+                    width:425,
+                  }}
+                  className={
+                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-4 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
                   }
                 >
                   {renderImages()}
                 </div>
                 <p className={"mx-32"}></p>
                 <div
-                  style={{ zIndex: image == "CLOTHES" ? 20 : 0, height: 500, width: 500, }}
+                  style={{
+                    zIndex: image == "CLOTHES" ? 20 : 0,
+                    height: 425,
+                    width:425,
+                  }}
                   className={
-                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll"
+                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-4 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
                   }
                 >
                   {renderClothesImages()}
                 </div>
                 <p className={"mx-32"}></p>
                 <div
-                  style={{ zIndex: image == "TEMPLATE" ? 20 : 0, height: 500, width: 500, }}
+                  style={{
+                    zIndex: image == "TEMPLATE" ? 20 : 0,
+                    height: 425,
+                    width:425,
+                  }}
                   className={
-                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-2 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
+                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-4 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
                   }
                 >
                   {rendertemplateImage()}
                 </div>
                 <p className={"mx-32"}></p>
                 <div
-                  style={{ zIndex: image == "FACEITEM" ? 20 : 0, height: 500, width: 500,  }}
+                  style={{
+                    zIndex: image == "FACEITEM" ? 20 : 0,
+                    height: 425,
+                    width:425,
+                  }}
                   className={
-                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-2 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
+                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-4 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
                   }
                 >
                   {renderfaceItemsImage()}
                 </div>
                 <p className={"mx-32"}></p>
                 <div
-                  style={{ zIndex: image == "EYES" ? 20 : 0, height: 500, width: 500,  }}
+                  style={{
+                    zIndex: image == "EYES" ? 20 : 0,
+                    height: 425,
+                    width:425,
+                  }}
                   className={
-                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-2 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
+                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-4 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
                   }
                 >
                   {rendereyesImage()}
                 </div>
                 <p className={"mx-32"}></p>
                 <div
-                  style={{ zIndex: image == "HELMET" ? 20 : 0, height: 500, width: 500,  }}
+                  style={{
+                    zIndex: image == "HELMET" ? 20 : 0,
+                    height: 425,
+                    width:425,
+                  }}
                   className={
-                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-2 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
+                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-4 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
                   }
                 >
                   {renderhelmetImages()}
                 </div>
                 <p className={"mx-32"}></p>
                 <div
-                  style={{ zIndex: image == "HAIR" ? 20 : 0, height: 500, width: 500,  }}
+                  style={{
+                    zIndex: image == "HAIR" ? 20 : 0,
+                    height: 425,
+                    width:425,
+                  }}
                   className={
-                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-2 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
+                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-4 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
                   }
                 >
                   {renderHairImages()}
                 </div>
                 <p className={"mx-32"}></p>
                 <div
-                  style={{ zIndex: image == "HANDITEM" ? 20 : 0, height: 500, width: 500,  }}
+                  style={{
+                    zIndex: image == "HANDITEM" ? 20 : 0,
+                    height: 425,
+                    width:425,
+                  }}
                   className={
-                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-2 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
+                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-4 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
                   }
                 >
                   {renderhandItemsImage()}
                 </div>
                 <p className={"mx-32"}></p>
                 <div
-                  style={{ zIndex: image == "MOUTH" ? 20 : 0, height: 500, width: 500,  }}
+                  style={{
+                    zIndex: image == "MOUTH" ? 20 : 0,
+                    height: 425,
+                    width:425,
+                  }}
                   className={
-                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-2 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
+                    "w-1/4 h-1/4 cursor-pointer absolute grid grid-cols-3 gap-1 overflow-scroll px-4 py-2 mx-auto justify-center border-2 border-gray-300 bg-gray-800 rounded-xl"
                   }
                 >
                   {rendermouthImage()}
@@ -576,7 +753,10 @@ const Home: NextPage = () => {
           <p className={"py-20"}></p>
           <div className="flex flex-col content-center mx-auto justify-center items-center max-w-screen">
             <button
-              style={{ fontFamily: "BeatWord", boxShadow: '0px 0px 10px 5px rgba(255,0,0,0.7)' }}
+              style={{
+                fontFamily: "BeatWord",
+                boxShadow: "0px 0px 10px 5px rgba(255,0,0,0.7)",
+              }}
               type="button"
               className="w-fit mx-0 px-20 md:px-32 self-center content-center tn:mx-0 elevation-10 hover:elevation-50 md:mx-24 h-24
                  justify-self-center mt-10 rounded-xl text-gray-100 hover:bg-blue-900 transition ease-in-out duration-700

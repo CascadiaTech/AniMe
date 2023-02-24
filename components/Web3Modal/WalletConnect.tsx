@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 
+import Image from "next/image";
 import { InjectedConnector } from "@web3-react/injected-connector";
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
 import { WalletLinkConnector } from "@web3-react/walletlink-connector";
@@ -9,15 +10,28 @@ import { connectors } from "./connectors";
 import { Modal } from "flowbite-react";
 export const ConnectWallet = () => {
   const [visible, setVisible] = useState(false);
+  const [connectWalletButton, setconnectWalletButton] = useState(
+    "/Buttons/ConnectWalletButtonRed.png"
+  );
+
+  const handleMouseEnterCnctWltGrey = () => {
+    setconnectWalletButton("/Buttons/ConnectWalletButtonGrey.png");
+  };
+  const handleMouseLeaveCnctWltRed = () => {
+    setconnectWalletButton("/Buttons/ConnectWalletButtonRed.png");
+  };
 
   const injectedConnector = new InjectedConnector({
     supportedChainIds: [1, 3, 4, 5, 42, 11155111],
   });
   const walletconnect = new WalletConnectConnector({
     supportedChainIds: [1, 3, 4, 5, 42, 11155111],
-    rpc: { 1: `https://mainnet.infura.io/v3/c686522a4d384ef28e376ec0406a424f`, 5: `https://goerli.infura.io/v3/c686522a4d384ef28e376ec0406a424f` },
+    rpc: {
+      1: `https://mainnet.infura.io/v3/c686522a4d384ef28e376ec0406a424f`,
+      5: `https://goerli.infura.io/v3/c686522a4d384ef28e376ec0406a424f`,
+    },
     bridge: "https://bridge.walletconnect.org",
-    qrcode: true,  
+    qrcode: true,
   });
 
   const CoinbaseWallet = new WalletLinkConnector({
@@ -29,10 +43,10 @@ export const ConnectWallet = () => {
   const setProvider = (type: string) => {
     window.localStorage.setItem("provider", type);
   };
- // useEffect(() => {
- //   const provider = window.localStorage.getItem("provider");
- //   if (provider) activate(connectors as any[ typeof provider]);
- // }, []);
+  // useEffect(() => {
+  //   const provider = window.localStorage.getItem("provider");
+  //   if (provider) activate(connectors as any[ typeof provider]);
+  // }, []);
 
   const { chainId, account, activate, active, library, deactivate } =
     useWeb3React();
@@ -49,7 +63,7 @@ export const ConnectWallet = () => {
 
   const ConnectCoinbase = () => {
     activate(CoinbaseWallet);
-    setProvider("coinbaseWallet")
+    setProvider("coinbaseWallet");
     setVisible(false);
   };
   const onActiveClick = () => {
@@ -75,21 +89,22 @@ export const ConnectWallet = () => {
         <button
           type="button"
           onClick={onActiveClick}
-          style={{ fontFamily:'MondayFeelings' }}
-          className="text-white bg-purple-800 hover:bg-teal-400 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-3 mt-3 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          style={{ fontFamily: "MondayFeelings" }}
+          className="text-white bg-red-600 hover:bg-red-400 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-3 mt-3 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         >
           Disconnect Wallet
         </button>
       ) : (
         <div>
-          <button
-            type="button"
+          <Image
+            className="duration-300 hover:cursor-pointer"
+            width={150}
+            height={50}
+            src={connectWalletButton}
+            onMouseEnter={handleMouseEnterCnctWltGrey}
+            onMouseLeave={handleMouseLeaveCnctWltRed}
             onClick={OnClick}
-            style={{ fontFamily:'MondayFeelings' }}
-            className="text-white bg-purple-800 hover:bg-teal-400 focus:ring-4 focus:ring-blue-300 font-medium mt-2 rounded-lg text-sm px-5 py-2.5 mb-2 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-          >
-            Connect Wallet
-          </button>
+          />
           <Modal show={visible} size="md" popup={true} onClose={OnOffClick}>
             <Modal.Header />
             <Modal.Body>
