@@ -6,15 +6,13 @@ import styles from '../styles/Home.module.css'
 const Home: NextPage = () => {
   return (
     <>
+
     <main className={styles.main}>
-    <HeaderComponent></HeaderComponent>
     <div className="mt-42">
       <CharacterBulder></CharacterBulder>
     </div>
     </main>
-    <footer>
-    <FooterComponent></FooterComponent>
-    </footer>
+
     </>
   );
 };

@@ -5,6 +5,7 @@ import { Web3ReactProvider } from '@web3-react/core'
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { Web3Provider } from '@ethersproject/providers'
+import HeaderComponent from '../components/Header/HeaderComponent';
 
 function getLibrary(provider: any): Web3Provider {
   const library = new Web3Provider(provider)
@@ -41,6 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
  // }, []);
   return(
   <Web3ReactProvider getLibrary={getLibrary}>
+    <HeaderComponent></HeaderComponent>
    <Component {...pageProps} />
    </Web3ReactProvider>
   )
