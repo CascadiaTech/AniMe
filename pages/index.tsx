@@ -140,7 +140,7 @@ const Home: NextPage = () => {
     setmouthButton("/Buttons/MouthButtonRed.png");
   };
 
-  const handleTouchMove = (e:any) => {
+  const handleTouchMoveBackground = (e:any) => {
     const touch = e.touches[0];
     const buttonRect = e.target.getBoundingClientRect();
     const isInsideButton =
@@ -155,11 +155,64 @@ const Home: NextPage = () => {
       setBackgroundButton("/Buttons/BackgroundButtonGrey.png");
     }
   };
+  const handleTouchMoveClothes = (e:any) => {
+    const touch = e.touches[0];
+    const buttonRect = e.target.getBoundingClientRect();
+    const isInsideButton =
+      touch.clientX >= buttonRect.left &&
+      touch.clientX <= buttonRect.right &&
+      touch.clientY >= buttonRect.top &&
+      touch.clientY <= buttonRect.bottom;
+  
+    if (isInsideButton) {
+      setClothesButton("/Buttons/ClothesButtonRed.png");
+    } else {
+      setClothesButton("/Buttons/ClothesButtonGrey.png");
+    }
+  };
+  const handleTouchMoveTemplate = (e:any) => {
+    const touch = e.touches[0];
+    const buttonRect = e.target.getBoundingClientRect();
+    const isInsideButton =
+      touch.clientX >= buttonRect.left &&
+      touch.clientX <= buttonRect.right &&
+      touch.clientY >= buttonRect.top &&
+      touch.clientY <= buttonRect.bottom;
+  
+    if (isInsideButton) {
+      setTemplateButton("/Buttons/TemplateButtonRed.png");
+    } else {
+      setTemplateButton("/Buttons/TemplateButtonGrey.png");
+    }
+  };
+  const handleTouchMoveFaceItem = (e:any) => {
+    const touch = e.touches[0];
+    const buttonRect = e.target.getBoundingClientRect();
+    const isInsideButton =
+      touch.clientX >= buttonRect.left &&
+      touch.clientX <= buttonRect.right &&
+      touch.clientY >= buttonRect.top &&
+      touch.clientY <= buttonRect.bottom;
+  
+    if (isInsideButton) {
+      setTemplateButton("/Buttons/TemplateButtonRed.png");
+    } else {
+      setTemplateButton("/Buttons/TemplateButtonGrey.png");
+    }
+  };
 
 
-  const handleTouchEnd = () => {
+  const handlebgTouchEnd = () => {
     setBackgroundButton("/Buttons/BackgroundButtonGrey.png");
     setimage("BACKGROUND");
+  };
+  const handleClothesTouchEnd = () => {
+    setClothesButton("/Buttons/ClothesButtonGrey.png");
+    setimage("CLOTHES");
+  };
+  const handleTemplateTouchEnd = () => {
+    setTemplateButton("/Buttons/TemplateButtonRed.png");
+    setimage("TEMPLATE");
   };
 
   function renderImages() {
@@ -423,30 +476,35 @@ const Home: NextPage = () => {
             onMouseEnter={() => setBackgroundButton("/Buttons/BackgroundButtonRed.png")}
             onMouseLeave={() => setBackgroundButton("/Buttons/BackgroundButtonGrey.png")}
             onTouchStart={handleMouseEnterbgRed}
-            onTouchMove={handleTouchMove}
+            onTouchMove={handleTouchMoveBackground}
             onClick={() => setimage("BACKGROUND")}
-            onTouchEnd={handleTouchEnd}
+            onTouchEnd={handlebgTouchEnd}
           />
             <p className={"px-2"}></p>
-            <Image
-              className="duration-300 hover:cursor-pointer"
-              width={150}
-              height={50}
-              src={clothesButton}
-              onTouchStart={handleMouseEnterbtnRed}
-              onTouchEnd={handleMouseLeavebtnGrey}
-              onClick={() => setimage("CLOTHES")}
-            />
-            <p className={"px-2"}></p>
-            <Image
-              className="duration-300 hover:cursor-pointer"
-              width={150}
-              height={50}
-              src={templateButton}
-              onMouseEnter={handleMouseEnterTempRed}
-              onMouseLeave={handleMouseLeaveTempGrey}
-              onClick={() => setimage("TEMPLATE")}
-            />
+          <Image
+            className="duration-300 hover:cursor-pointer"
+            width={150}
+            height={50}
+            src={clothesButton}
+            onMouseEnter={() => setClothesButton("/Buttons/ClothesButtonRed.png")}
+            onMouseLeave={() => setClothesButton("/Buttons/ClothesButtonGrey.png")}
+            onTouchStart={handleMouseEnterbtnRed}
+            onTouchMove={handleTouchMoveClothes}
+            onClick={() => setimage("CLOTHES")}
+            onTouchEnd={handleClothesTouchEnd}
+          />
+          <Image
+            className="duration-300 hover:cursor-pointer"
+            width={150}
+            height={50}
+            src={templateButton}
+            onMouseEnter={() => setTemplateButton("/Buttons/TemplateButtonRed.png")}
+            onMouseLeave={() => setTemplateButton("/Buttons/TemplateButtonGrey.png")}
+            onTouchStart={handleMouseEnterTempRed}
+            onTouchMove={handleTouchMoveTemplate}
+            onClick={() => setimage("TEMPLATE")}
+            onTouchEnd={handleTemplateTouchEnd}
+          />
             <p className={"px-2"}></p>
             <Image
               className="duration-300 hover:cursor-pointer"

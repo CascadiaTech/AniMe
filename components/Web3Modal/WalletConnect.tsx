@@ -11,14 +11,14 @@ import { Modal } from "flowbite-react";
 export const ConnectWallet = () => {
   const [visible, setVisible] = useState(false);
   const [connectWalletButton, setconnectWalletButton] = useState(
-    "/Buttons/ConnectWalletButtonRed.png"
+    "/Buttons/ConnectWalletButtonGrey.png"
   );
 
-  const handleMouseEnterCnctWltGrey = () => {
-    setconnectWalletButton("/Buttons/ConnectWalletButtonGrey.png");
-  };
-  const handleMouseLeaveCnctWltRed = () => {
+  const handleMouseEnterCnctWltRed = () => {
     setconnectWalletButton("/Buttons/ConnectWalletButtonRed.png");
+  };
+  const handleMouseLeaveCnctWltGrey = () => {
+    setconnectWalletButton("/Buttons/ConnectWalletButtonGrey.png");
   };
 
   const injectedConnector = new InjectedConnector({
@@ -101,8 +101,8 @@ export const ConnectWallet = () => {
             width={150}
             height={50}
             src={connectWalletButton}
-            onMouseEnter={handleMouseEnterCnctWltGrey}
-            onMouseLeave={handleMouseLeaveCnctWltRed}
+            onMouseEnter={handleMouseEnterCnctWltRed}
+            onMouseLeave={handleMouseLeaveCnctWltGrey}
             onClick={OnClick}
           />
           <Modal show={visible} size="md" popup={true} onClose={OnOffClick}>
