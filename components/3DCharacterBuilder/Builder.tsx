@@ -18,7 +18,7 @@ const traitPaths: string[] = [
   // Load the trait objects and add them to the main character
   const traits: any[] = [];
   traitPaths.forEach((path) => {
-    const { scene } = useGLTF(urljoin(baseUrl, '/3dassets/body.glb'));
+    const { scene } = useGLTF(urljoin(baseUrl, path));
     traits.push(scene);
   });
   
