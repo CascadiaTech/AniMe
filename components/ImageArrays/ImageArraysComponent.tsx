@@ -1,11 +1,3 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import "tailwindcss-elevation";
-import { useEffect, useRef, useState } from "react";
-import "@uniswap/widgets/fonts.css";
-import { useWeb3React } from "@web3-react/core";
-import React from "react";
 
 export const backgroundImages = [
     "/NFTassets/Background/1.png",
