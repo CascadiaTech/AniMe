@@ -1,20 +1,50 @@
 import "tailwindcss-elevation";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 //import Image from "next/image";
 import Link from "next/link";
 import AniMeLogo from "../../assets/images/AniMe-logo.jpg";
 import { ConnectWallet } from "../Web3Modal/WalletConnect";
 import { Dropdown } from "flowbite-react";
 export default function HeaderComponent() {
-  //    backgroundImage: `url(${backgroundimage})`,
+  const [websiteButton, setwebsiteButton] = useState(
+    "/Buttons/WebsiteButtonGrey.png"
+  );
+  const [dashboardButton, setdashboardButton] = useState(
+    "/Buttons/DashboardButtonGrey.png"
+  );
+  const [NftMintButton, setNftMintButton] = useState(
+    "/Buttons/NftMintButtonRed.png"
+  );
+
+
+  const handleMouseEnterWbsRed = () => {
+    setwebsiteButton("/Buttons/WebsiteButtonRed.png");
+  };
+  const handleMouseLeaveWbsGrey = () => {
+    setwebsiteButton("/Buttons/WebsiteButtonGrey.png");
+  };
+
+  const handleMouseEnterDshBrdRed = () => {
+    setdashboardButton("/Buttons/DashboardButtonRed.png");
+  };
+  const handleMouseLeaveDshBrdGrey = () => {
+    setdashboardButton("/Buttons/DashboardButtonGrey.png");
+  };
+
+  const handleMouseEnterNftMntGrey = () => {
+    setNftMintButton("/Buttons/NftMintButtonGrey.png");
+  };
+  const handleMouseLeaveNftMntRed = () => {
+    setNftMintButton("/Buttons/NftMintButtonRed.png");
+  };
 
   return (
     <div>
       <nav className="bg-black px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed w-full z-50 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
         <div className="container flex flex-nowrap justify-left items-center mx-auto">
           <div></div>
-          <div className="md:order-2">
+          <div className="md:order-2 px-2 md:pb-5 lg:pb-6">
             <ConnectWallet></ConnectWallet>
           </div>
           <div className="sm:visible md:hidden">
@@ -63,54 +93,45 @@ export default function HeaderComponent() {
             className="h-0 justify-left items-left text-left w-full md:flex md:h-fit md:w-auto order-1"
             id="navbar-sticky"
           >
-            <ul className="invisible md:visible h-auto flex flex-row justify-left text-left items-left p-4 mt-4 bg-black rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-black dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="invisible md:visible h-auto my-4 flex flex-row justify-left text-left items-left p-4 mt-4 bg-black rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-black dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
-                <Image width={50} height={50} src={AniMeLogo} alt="asa"></Image>
+                <Image width={60} height={60} src={AniMeLogo} alt="asa"></Image>
               </li>
               <li>
-                <button
-                  type="button"
+                <Image
+                  className="duration-300 hover:cursor-pointer"
+                  width={150}
+                  height={50}
+                  src={websiteButton}
+                  onMouseEnter={handleMouseEnterWbsRed}
+                  onMouseLeave={handleMouseLeaveWbsGrey}
                   onClick={() =>
                     window.open("https://www.givewellinu.com/home")
                   }
-                  className="text-white bg-red-600 hover:bg-red-400 focus:ring-4 focus:ring-blue-300 font-medium mt-2 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                >
-                  <p
-                    className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white"
-                    style={{ fontFamily: "MondayFeelings" }}
-                  >
-                    Website{" "}
-                  </p>
-                </button>
+                />
               </li>
               <li>
-                <Link href="/">
-                  <button
-                    type="button"
-                    className="text-white bg-red-600 hover:bg-red-400 focus:ring-4 focus:ring-blue-300 font-medium mt-2 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                  >
-                    <p
-                      className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white"
-                      style={{ fontFamily: "MondayFeelings" }}
-                    >
-                      Dashboard{" "}
-                    </p>
-                  </button>
+                <Link href={"/"}>
+                  <Image
+                    className="duration-300 hover:cursor-pointer"
+                    width={150}
+                    height={50}
+                    src={dashboardButton}
+                    onMouseEnter={handleMouseEnterDshBrdRed}
+                    onMouseLeave={handleMouseLeaveDshBrdGrey}
+                  />
                 </Link>
               </li>
               <li>
                 <Link href="/Dapp/NFTMintPage">
-                  <button
-                    type="button"
-                    className="text-white bg-red-600 hover:bg-red-400 focus:ring-4 focus:ring-blue-300 font-medium mt-2 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                  >
-                    <p
-                      className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white"
-                      style={{ fontFamily: "MondayFeelings" }}
-                    >
-                      NFT Mint{" "}
-                    </p>
-                  </button>
+                  <Image
+                    className="duration-300 hover:cursor-pointer"
+                    width={150}
+                    height={50}
+                    src={NftMintButton}
+                    onMouseEnter={handleMouseEnterNftMntGrey}
+                    onMouseLeave={handleMouseLeaveNftMntRed}
+                  />
                 </Link>
               </li>
             </ul>
