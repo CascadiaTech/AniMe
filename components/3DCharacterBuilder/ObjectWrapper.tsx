@@ -11,8 +11,5 @@ export function Object3DWrapper(props: any) {
     }
   });
 
-  return(
-
-    <primitive object={props.object} ref={objectRef} />
-
-)}
+  return <primitive object={props.object} ref={objectRef} />;
+}

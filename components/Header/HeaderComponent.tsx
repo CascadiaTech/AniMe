@@ -4,6 +4,7 @@ import React, { useState } from "react";
 //import Image from "next/image";
 import Link from "next/link";
 import AniMeLogo from "../../assets/images/AniMe-logo.jpg";
+import odasealogo from '../../assets/odasealogo.png'
 import { ConnectWallet } from "../Web3Modal/WalletConnect";
 import { Dropdown } from "flowbite-react";
 export default function HeaderComponent() {
@@ -75,7 +76,7 @@ export default function HeaderComponent() {
               <Dropdown.Item>
                 <a
                   onClick={() =>
-                    window.open("https://www.givewellinu.com/home")
+                    window.open("https://www.ggoogle.com")
                   }
                 >
                   <p
@@ -95,7 +96,7 @@ export default function HeaderComponent() {
           >
             <ul className="invisible md:visible h-auto my-4 flex flex-row justify-left text-left items-left p-4 mt-4 bg-black rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-black dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
-                <Image width={60} height={60} src={AniMeLogo} alt="asa"></Image>
+                <Image width={80} height={80} src={odasealogo} alt="asa"></Image>
               </li>
               <li>
                 <Image
@@ -106,7 +107,7 @@ export default function HeaderComponent() {
                   onMouseEnter={handleMouseEnterWbsRed}
                   onMouseLeave={handleMouseLeaveWbsGrey}
                   onClick={() =>
-                    window.open("https://www.givewellinu.com/home")
+                    window.open("https://www.google.com")
                   }
                 />
               </li>
@@ -123,7 +124,7 @@ export default function HeaderComponent() {
                 </Link>
               </li>
               <li>
-                <Link href="/Dapp/NFTMintPage">
+                <Link href="/">
                   <Image
                     className="duration-300 hover:cursor-pointer"
                     width={150}

@@ -60,6 +60,7 @@
     "react-dom": "18.2.0",
     "react-redux": "^8.0.4",
     "react-scroll": "^1.8.6",
+    "react-scroll-percentage": "^4.3.0",
     "react-trading-ui": "^0.1.5",
     "react-window": "^1.8.5",
     "sweetalert2": "^11.4.28",

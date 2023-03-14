@@ -61,7 +61,7 @@ module.exports = {
         1000: "1000px",
       },
       animation: {
-        fadeIn: "fadeIn 2s ease-in forwards",
+        fadeIn: "fadeIn 1s ease-in-out forwards",
         fadeindown: "fadeindown 1s ease-out forwards",
         fadeinleft: "fadeinleft 1s ease-out forwards",
         fadeinright: "fadeinright 1s ease-out forwards",
